@@ -13,7 +13,10 @@ def posting(url, data):
 
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
-    response = requests.post(url, headers=headers, json=data)
+    try:
+        response = requests.post(url, headers=headers, json=data)
+    except:
+        return 'Ошибка. Сервер не работает'
 
     if response.status_code == 200:
         response_data = json.loads(response.text)
