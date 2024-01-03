@@ -1,8 +1,11 @@
+import os
 import streamlit as st
 import time
 import json
 import requests
 from requests.structures import CaseInsensitiveDict
+
+URL = os.getenv('QUESTION_URL')
 
 
 def posting(url, data):
@@ -25,6 +28,6 @@ if __name__ == "__main__":
 
     if search_query:
         with st.spinner(text=f"Ищу {search_query}"):
-            url = 'http://20.68.151.129:5000/user_question'
-            answer = posting(url, search_query)
+            answer = posting(URL, search_query)
             st.write("Ответ:", answer)
+
