@@ -23,7 +23,7 @@ def posting(url, data):
 
 
 if __name__ == "__main__":
-    st.header('Чат-бот по внутренней документации', divider='blue')
+    st.header('Чат по внутренней документации', divider='blue')
     search_query = st.text_input("Введите ваш вопрос...", value="", key="вопрос")
 
     if search_query:
